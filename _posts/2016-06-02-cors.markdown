@@ -5,8 +5,6 @@ date:   2016-05-22 04:10:03 +0700
 categories: [python, codefights]
 ---
 
-跨域访问
------------------
 1、什么是跨域
 例：如果在A网站中，我们希望使用Ajax来获得B网站中的特定内容并且A网站与B网站不在同一个域中。
 这时就出现了跨域访问的问题。
@@ -31,21 +29,21 @@ categories: [python, codefights]
 ```
 HTML脚本：
 <!doctype html>
-<html>
-    <head>
-        <title>cross domain</title>
-        <script src="jquery.min.js"></script>
-    </head>
+ <html>
+   <head>
+     <title>cross domain</title>
+     <script src="jquery.min.js"></script>
+   </head>
 
     <script>
-        $(function(){
-			var url = "http://ai.lezhi.com?callback=?";
-			// callback=?会自动生成一个函数名
-			jQuery.getJSON(url, function(data){
-				console.log(data);
-			})
+      $(function(){
+       var url = "http://ai.lezhi.com?callback=?";
+       // callback=?会自动生成一个函数名
+       jQuery.getJSON(url, function(data){
+        console.log(data);
         })
-    </script>
+      })
+</script>
 </html>
 
 PHP脚本：
