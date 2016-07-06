@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>跨域访问 – 猿愤 – 一本书，一张床</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="1、什么是跨域
+例：如果在A网站中，我们希望使用Ajax来获得B网站中的特定内容并且A网站与B网站不在同一个域中。
+这时就出现了跨域访问的问题。
+
+" />
+    <meta property="og:description" content="1、什么是跨域
+例：如果在A网站中，我们希望使用Ajax来获得B网站中的特定内容并且A网站与B网站不在同一个域中。
+这时就出现了跨域访问的问题。
+
+" />
+    
+    <meta name="author" content="猿愤" />
+
+    
+    <meta property="og:title" content="跨域访问" />
+    <meta property="twitter:title" content="跨域访问" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="alternate" type="application/rss+xml" title="猿愤 - 一本书，一张床" href="/feed.xml" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body>
+    
+    
+    <div class="intro-header">    
+      <div class="container">
+        <div class="post-heading">
+            <h1>跨域访问</h1>
+            <span class="meta">Posted by <a href="/about"> 
+            </a> on May 22, 2016
+            <a href="/"> 返回首页 </a>
+            </span>
+        </div>
+            
+      </div>
+    </div>
+    
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+ <div class="space-extra-small">
+ </div>
+
+  <div class="entry">
+    <p>1、什么是跨域
+例：如果在A网站中，我们希望使用Ajax来获得B网站中的特定内容并且A网站与B网站不在同一个域中。
+这时就出现了跨域访问的问题。</p>
+
+<p>2、同源策略限制
+<strong>同源策略</strong>是指阻止代码获得或者更改从另一个域名下获得的文件或者信息。也就是说我们的请求地址必须和当前网站的地指相同。
+浏览器根据同源策略的安全限制（同源策略通过隔离来实现对资源的保护），网络连接的跨域访问时不被允许的，XmlHttpRequest也不例外。
+&gt;在浏览器中不能直接来跨域访问，而在服务器端没有跨域安全限制。
+2-1、什么是同源
+同源：两个URL的协议、域名和端口相同。</p>
+
+<p>3、跨域的解决方案
+3-1、js的跨域
+3-1-1、通过服务端做代理中转
+&gt;缺点：适用场景少，不灵活</p>
+
+<p>3-1-2、jsonp
+动态创建<code class="highlighter-rouge">&lt;script src ="http://www.test.com?***"&gt;&lt;/script&gt;</code>
+&gt;同源策略并不限制script标签载入;
+&gt;简单的jsonp只支持get方式。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HTML脚本：
+<span class="cp">&lt;!doctype html&gt;</span>
+ <span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+     <span class="nt">&lt;title&gt;</span>cross domain<span class="nt">&lt;/title&gt;</span>
+     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+
+    <span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+       <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"http://ai.lezhi.com?callback=?"</span><span class="p">;</span>
+       <span class="c1">// callback=?会自动生成一个函数名</span>
+       <span class="nx">jQuery</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+        <span class="p">})</span>
+      <span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+
+PHP脚本：
+<span class="cp">&lt;?php
+	$callback = $_GET["callback"];
+	$arr = array(
+		'code' =&gt; 200,
+		'message' =&gt; 'test'
+	);
+
+	$jsondata = json_encode($arr);
+	///注意以下需要使用客户端提供的回调函数
+   echo $callback."({$jsondata})";
+?&gt;</span>
+</code></pre>
+</div>
+
+<p>3-1-3、CORS（Cross-Origin Resource Sharing）
+服务器端对于CORS的支持，主要就是通过设置Access-Control-Allow-Origin来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。</p>
+
+<p>3-1-3-1、方法一：Apache配置（开放的权限较大）
+Apache需要使用mod_headers模块来激活HTTP头的设置，它默认是激活的。你只需要在Apache配置文件的<Directory>, <Location>, <Files>或<VirtualHost>的配置里加入以下内容即可：</VirtualHost></Files></Location></Directory></p>
+
+<blockquote>
+  <p>Header set Access-Control-Allow-Origin *</p>
+</blockquote>
+
+<p>3-1-3-2、方法二：直接在PHP脚本配置（常用，比较灵活和安全，只针对允许访问的脚本提供跨域需求）</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;?php
+ /**
+  * "*":允许所有的域
+  * 如果要针对某个域提供cors服务：http://www.test.com:8135 (注：有端口需要加上端口)
+  *
+  * 配置好以后可以在浏览器用Ajax直接post和get数据
+  */
+ header("Access-Control-Allow-Origin:*");
+ ?&gt;
+</code></pre>
+</div>
+
+<p>3-2、flash的swf文件的跨域
+flash解决跨域问题的方案：在被访问域的服务器根目录下创建crossdomain.xml文件</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE cross-domain-policy SYSTEM 'http://www.macromedia.com/xml/dtds/cross-domain-policy.dtd'&gt;</span>
+<span class="nt">&lt;cross-domain-policy&gt;</span>
+	<span class="nt">&lt;allow-access-from</span> <span class="na">domain=</span><span class="s">"*"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/cross-domain-policy&gt;</span>
+
+</code></pre>
+</div>
+
+  </div>
+
+  
+</article>
+
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+            <div class="svg-icon">
+          
+<a href="mailto:1619316848@qq.com"><i class="icon-envelope icon-2x"></i></a>
+
+
+<a href="https://github.com/linshaodong"><i class="icon-github icon-2x"></i></a>
+
+
+
+
+
+
+
+
+            </div>
+        </footer>
+      </div>
+    </div>
+
+
+    
+
+  </body>
+</html>

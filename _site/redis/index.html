@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>redis – 猿愤 – 一本书，一张床</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的
+日志型、Key-Value数据库(性能并不突出)，并提供多种语言的API。从2010年3月15日起，Redis的开发工作由VMware主持。
+
+" />
+    <meta property="og:description" content="是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的
+日志型、Key-Value数据库(性能并不突出)，并提供多种语言的API。从2010年3月15日起，Redis的开发工作由VMware主持。
+
+" />
+    
+    <meta name="author" content="猿愤" />
+
+    
+    <meta property="og:title" content="redis" />
+    <meta property="twitter:title" content="redis" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="alternate" type="application/rss+xml" title="猿愤 - 一本书，一张床" href="/feed.xml" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body>
+    
+    
+    <div class="intro-header">    
+      <div class="container">
+        <div class="post-heading">
+            <h1>redis</h1>
+            <span class="meta">Posted by <a href="/about"> 
+            </a> on May 22, 2016
+            <a href="/"> 返回首页 </a>
+            </span>
+        </div>
+            
+      </div>
+    </div>
+    
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+ <div class="space-extra-small">
+ </div>
+
+  <div class="entry">
+    <p>是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的
+日志型、Key-Value数据库(性能并不突出)，并提供多种语言的API。从2010年3月15日起，Redis的开发工作由VMware主持。</p>
+
+<p><strong><em>1、支持存储的value类型</em></strong></p>
+
+<ul>
+  <li>string(字符串)：一个key对应一个value;</li>
+  <li>list(链表)：主要功能是push、pop、获取一个范围的所有值等等。操作中key理解为链表的名字;
+(一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的。链表由一系列结点（链表中每一个元素称为结点）组成，结点可以在运行时动态生成。每个结点包括两个部分：一个是存储数据元素的数据域，另一个是存储下一个结点地址的指针域。 相比于线性表顺序结构，操作复杂。)</li>
+  <li>set(集合);</li>
+  <li>zset(sorted set –有序集合);</li>
+  <li>hash（哈希类型）：是一个string类型的field和value的映射表.一个key可对应多个field，一个field对应一个value。
+这些数据都支持push/pop、add/remove及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。</li>
+</ul>
+
+<p><strong><em>2、redis的存储</em></strong></p>
+
+<ul>
+  <li>分为内存存储、磁盘存储和log文件三部分，配置文件中有三个参数对其进行配置。</li>
+</ul>
+
+<p><strong><em>3、redis使用了两种文件格式：全量数据和增量请求。</em></strong></p>
+
+<ul>
+  <li>全量数据：格式把内存中的数据写入磁盘，便于下次读取文件进行加载；
+增量请求：文件则是把内存中的数据序列化为操作请求，用于读取文件进行replay得到数据，序列化的操作包括SET、RPUSH、SADD、ZADD。</li>
+</ul>
+
+
+  </div>
+
+  
+</article>
+
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+            <div class="svg-icon">
+          
+<a href="mailto:1619316848@qq.com"><i class="icon-envelope icon-2x"></i></a>
+
+
+<a href="https://github.com/linshaodong"><i class="icon-github icon-2x"></i></a>
+
+
+
+
+
+
+
+
+            </div>
+        </footer>
+      </div>
+    </div>
+
+
+    
+
+  </body>
+</html>

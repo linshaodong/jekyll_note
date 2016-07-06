@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <title>Django – 猿愤 – 一本书，一张床</title>
 
-    {% include meta.html %}
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="一本书，一张床">
+    <meta property="og:description" content="一本书，一张床" />
+    
+    <meta name="author" content="猿愤" />
+
+    
+    <meta property="og:title" content="Django" />
+    <meta property="twitter:title" content="Django" />
+    
 
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="猿愤 - 一本书，一张床" href="/feed.xml" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
   </head>
@@ -23,14 +37,14 @@
          <div class="container">
            <header class="masthead clearfix">
              <div class="site-info">
-               <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-               <p class="site-description">{{ site.description }}</p>
+               <h1 class="site-name"><a href="/">猿愤</a></h1>
+               <p class="site-description">一本书，一张床</p>
              </div>
              <nav>
                <span><input type="text" value=""></span>
-               <a href="{{ site.baseurl }}/">Blog</a>
-               <a href="{{ site.baseurl }}/about">About</a>
-               <a href="{{ site.baseurl }}/projects">Projects</a>
+               <a href="/">Blog</a>
+               <a href="/about">About</a>
+               <a href="/projects">Projects</a>
              </nav>
            </header>
          </div>
@@ -47,7 +61,7 @@
                             <div class="ch-info">
                                 <div class="ch-info-front ch-img-1"></div>
                                 <div class="ch-info-back">
-                                    <h3>{{site.name}}</h3>
+                                    <h3>猿愤</h3>
                                     <p></br><a href="https://github.com/linshaodong">My GitHub</a></p>
                                 </div>
                             </div>
@@ -63,19 +77,58 @@
     </div>
 
     <div id="main" role="main" class="container">
-      {{ content }}
+      <header id="post-header">
+    <h1 id="post-subtitle">Articles by category: django</h1>
+</header>
+
+<div id="post-content">
+    <hr />
+    
+        
+        
+            
+                <a href="/category/python" class="btn btn-sm btn-default">python</a>
+            
+        
+    
+        
+        
+            
+                <a href="/category/codefights" class="btn btn-sm btn-default">codefights</a>
+            
+        
+    
+    <hr />
+
+    
+        <p>There are no posts in this categories.</p>
+    
+</div>
     </div>
 
     <div class="wrapper-footer">
       <div class="container">
         <footer class="footer">
             <div class="svg-icon">
-          {% include svg-icons.html %}
+          
+<a href="mailto:1619316848@qq.com"><i class="icon-envelope icon-2x"></i></a>
+
+
+<a href="https://github.com/linshaodong"><i class="icon-github icon-2x"></i></a>
+
+
+
+
+
+
+
+
             </div>
         </footer>
       </div>
     </div>
 
-    {% include analytics.html %}
+    
+
   </body>
 </html>

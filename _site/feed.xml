@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description>一本书，一张床</description>
+    <link>http://linshaodong.github.io/</link>
+    <atom:link href="http://linshaodong.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 24 Jun 2016 17:21:20 +0800</pubDate>
+    <lastBuildDate>Fri, 24 Jun 2016 17:21:20 +0800</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>redis</title>
+        <description>&lt;p&gt;是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的
+日志型、Key-Value数据库(性能并不突出)，并提供多种语言的API。从2010年3月15日起，Redis的开发工作由VMware主持。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;1、支持存储的value类型&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;string(字符串)：一个key对应一个value;&lt;/li&gt;
+  &lt;li&gt;list(链表)：主要功能是push、pop、获取一个范围的所有值等等。操作中key理解为链表的名字;
+(一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的。链表由一系列结点（链表中每一个元素称为结点）组成，结点可以在运行时动态生成。每个结点包括两个部分：一个是存储数据元素的数据域，另一个是存储下一个结点地址的指针域。 相比于线性表顺序结构，操作复杂。)&lt;/li&gt;
+  &lt;li&gt;set(集合);&lt;/li&gt;
+  &lt;li&gt;zset(sorted set –有序集合);&lt;/li&gt;
+  &lt;li&gt;hash（哈希类型）：是一个string类型的field和value的映射表.一个key可对应多个field，一个field对应一个value。
+这些数据都支持push/pop、add/remove及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;2、redis的存储&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;分为内存存储、磁盘存储和log文件三部分，配置文件中有三个参数对其进行配置。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;3、redis使用了两种文件格式：全量数据和增量请求。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;全量数据：格式把内存中的数据写入磁盘，便于下次读取文件进行加载；
+增量请求：文件则是把内存中的数据序列化为操作请求，用于读取文件进行replay得到数据，序列化的操作包括SET、RPUSH、SADD、ZADD。&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sun, 22 May 2016 05:10:03 +0800</pubDate>
+        <link>http://linshaodong.github.io/redis/</link>
+        <guid isPermaLink="true">http://linshaodong.github.io/redis/</guid>
+        
+        
+        <category>python</category>
+        
+        <category>codefights</category>
+        
+      </item>
+    
+      <item>
+        <title>跨域访问</title>
+        <description>&lt;p&gt;1、什么是跨域
+例：如果在A网站中，我们希望使用Ajax来获得B网站中的特定内容并且A网站与B网站不在同一个域中。
+这时就出现了跨域访问的问题。&lt;/p&gt;
+
+&lt;p&gt;2、同源策略限制
+&lt;strong&gt;同源策略&lt;/strong&gt;是指阻止代码获得或者更改从另一个域名下获得的文件或者信息。也就是说我们的请求地址必须和当前网站的地指相同。
+浏览器根据同源策略的安全限制（同源策略通过隔离来实现对资源的保护），网络连接的跨域访问时不被允许的，XmlHttpRequest也不例外。
+&amp;gt;在浏览器中不能直接来跨域访问，而在服务器端没有跨域安全限制。
+2-1、什么是同源
+同源：两个URL的协议、域名和端口相同。&lt;/p&gt;
+
+&lt;p&gt;3、跨域的解决方案
+3-1、js的跨域
+3-1-1、通过服务端做代理中转
+&amp;gt;缺点：适用场景少，不灵活&lt;/p&gt;
+
+&lt;p&gt;3-1-2、jsonp
+动态创建&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script src =&quot;http://www.test.com?***&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;
+&amp;gt;同源策略并不限制script标签载入;
+&amp;gt;简单的jsonp只支持get方式。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HTML脚本：
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;cross domain&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;jquery.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+       &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;http://ai.lezhi.com?callback=?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+       &lt;span class=&quot;c1&quot;&gt;// callback=?会自动生成一个函数名&lt;/span&gt;
+       &lt;span class=&quot;nx&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+
+PHP脚本：
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php
+	$callback = $_GET[&quot;callback&quot;];
+	$arr = array(
+		&#39;code&#39; =&amp;gt; 200,
+		&#39;message&#39; =&amp;gt; &#39;test&#39;
+	);
+
+	$jsondata = json_encode($arr);
+	///注意以下需要使用客户端提供的回调函数
+   echo $callback.&quot;({$jsondata})&quot;;
+?&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;3-1-3、CORS（Cross-Origin Resource Sharing）
+服务器端对于CORS的支持，主要就是通过设置Access-Control-Allow-Origin来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。&lt;/p&gt;
+
+&lt;p&gt;3-1-3-1、方法一：Apache配置（开放的权限较大）
+Apache需要使用mod_headers模块来激活HTTP头的设置，它默认是激活的。你只需要在Apache配置文件的&lt;Directory&gt;, &lt;Location&gt;, &lt;Files&gt;或&lt;VirtualHost&gt;的配置里加入以下内容即可：&lt;/VirtualHost&gt;&lt;/Files&gt;&lt;/Location&gt;&lt;/Directory&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Header set Access-Control-Allow-Origin *&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;3-1-3-2、方法二：直接在PHP脚本配置（常用，比较灵活和安全，只针对允许访问的脚本提供跨域需求）&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;?php
+ /**
+  * &quot;*&quot;:允许所有的域
+  * 如果要针对某个域提供cors服务：http://www.test.com:8135 (注：有端口需要加上端口)
+  *
+  * 配置好以后可以在浏览器用Ajax直接post和get数据
+  */
+ header(&quot;Access-Control-Allow-Origin:*&quot;);
+ ?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;3-2、flash的swf文件的跨域
+flash解决跨域问题的方案：在被访问域的服务器根目录下创建crossdomain.xml文件&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE cross-domain-policy SYSTEM &#39;http://www.macromedia.com/xml/dtds/cross-domain-policy.dtd&#39;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;cross-domain-policy&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;allow-access-from&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;domain=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;*&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/cross-domain-policy&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 22 May 2016 05:10:03 +0800</pubDate>
+        <link>http://linshaodong.github.io/cors/</link>
+        <guid isPermaLink="true">http://linshaodong.github.io/cors/</guid>
+        
+        
+        <category>python</category>
+        
+        <category>codefights</category>
+        
+      </item>
+    
+  </channel>
+</rss>
