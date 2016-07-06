@@ -5,9 +5,60 @@
     <description>一本书，一张床</description>
     <link>http://linshaodong.github.io/</link>
     <atom:link href="http://linshaodong.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 24 Jun 2016 17:21:20 +0800</pubDate>
-    <lastBuildDate>Fri, 24 Jun 2016 17:21:20 +0800</lastBuildDate>
+    <pubDate>Wed, 06 Jul 2016 15:54:45 +0800</pubDate>
+    <lastBuildDate>Wed, 06 Jul 2016 15:54:45 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>js调整父层iframe的宽高</title>
+        <description>&lt;p&gt;js控制上层iframe的属性，修改宽高为例。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ///父层iframe
+    &amp;lt;div id=&quot;game&quot;&amp;gt;&amp;lt;iframe width=&quot;300&quot; height=&quot;600&quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;/div&amp;gt;
+
+    ///子层的js代码：获取父层宽高、修改父层宽高
+    function parentIframe(type, width) {
+        try {
+            var gameId = window.parent.document.getElementById(&quot;game&quot;);
+            var pIframe = gameId.getElementsByTagName(&#39;iframe&#39;)[0];
+
+            if (type == 1) { ///set : 设置的宽度
+            
+                pIframe.width = width;
+                pIframe.style.width = width + &quot;px&quot;;
+                
+            } else { ///get ：获取宽度
+                var w = parseInt(pIframe.style.width); ///先读去是否设置了style属性
+                if (pIframe.style.width == &quot;&quot; || w &amp;lt; 0) {
+                    w = pIframe.width; ///如果未设置style则取iframe的width属性
+                }
+
+                ///
+                return w;
+            }
+        }
+        catch (e) {
+            //console.log(e);
+            return 0;
+        }
+    }
+    var pWidth = parentIframe();
+    var timer = setInterval(function() {
+        parentIframe();
+    }, 50);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 06 Jul 2016 05:10:03 +0800</pubDate>
+        <link>http://linshaodong.github.io/js-iframe-auto/</link>
+        <guid isPermaLink="true">http://linshaodong.github.io/js-iframe-auto/</guid>
+        
+        
+        <category>python</category>
+        
+        <category>codefights</category>
+        
+      </item>
     
       <item>
         <title>redis</title>
@@ -43,6 +94,36 @@
         <pubDate>Sun, 22 May 2016 05:10:03 +0800</pubDate>
         <link>http://linshaodong.github.io/redis/</link>
         <guid isPermaLink="true">http://linshaodong.github.io/redis/</guid>
+        
+        
+        <category>python</category>
+        
+        <category>codefights</category>
+        
+      </item>
+    
+      <item>
+        <title>Linux下centos忘记密码，提示‘鉴定错误’</title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;重启，在读秒的界面按键盘的上下选择键；&lt;/li&gt;
+  &lt;li&gt;在此界面上按“e”键，出现界面；&lt;/li&gt;
+  &lt;li&gt;选择界面中类似kernel开头的第二项；&lt;/li&gt;
+  &lt;li&gt;在此按“e”键，出现界面：&lt;/li&gt;
+  &lt;li&gt;键盘输入：kernel/boot/vmlinuz-2.4.18-14 single ro root=LABEL=/
+    &lt;ul&gt;
+      &lt;li&gt;vmlinuz的版本以3中的显示为准；&lt;/li&gt;
+      &lt;li&gt;按回车键，返回界面；&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;到此你就可以按“b”键了；&lt;/li&gt;
+  &lt;li&gt;在新出现的界面输入：passwd root&lt;/li&gt;
+  &lt;li&gt;重置密码；&lt;/li&gt;
+  &lt;li&gt;再输入（重启，并以root身份登录）：#reboot&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sun, 22 May 2016 05:10:03 +0800</pubDate>
+        <link>http://linshaodong.github.io/centos-forgetPWD/</link>
+        <guid isPermaLink="true">http://linshaodong.github.io/centos-forgetPWD/</guid>
         
         
         <category>python</category>

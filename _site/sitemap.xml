@@ -2,118 +2,128 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://linshaodong.github.io/js-iframe-auto/</loc>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
+    </url>
+    
+    <url>
         <loc>http://linshaodong.github.io/redis/</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://linshaodong.github.io/centos-forgetPWD/</loc>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     <url>
         <loc>http://linshaodong.github.io/cors/</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/404/</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/about/</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/category/bash</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/category/codefights</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/category/django</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/feed.xml</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/category/jekyll</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/css/main.css</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/category/others</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/projects/</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/category/python</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/category/raspberry</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/category/ruby</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
     
     <url>
         <loc>http://linshaodong.github.io/category/security</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     
@@ -122,7 +132,7 @@
     
     <url>
         <loc>http://linshaodong.github.io/style.css</loc>
-        <lastmod>2016-06-24T17:21:20+08:00</lastmod>
+        <lastmod>2016-07-06T15:54:45+08:00</lastmod>
     </url>
     
     

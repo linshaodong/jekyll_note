@@ -38,10 +38,12 @@
                <p class="site-description">一本书，一张床</p>
              </div>
              <nav>
-               <span><input type="text" value=""></span>
-               <a href="/">Blog</a>
+               <!--<span><input type="text" value=""></span>-->
+               <a href="/">博客</a>
+                 <!--
                <a href="/about">About</a>
                <a href="/projects">Projects</a>
+               -->
              </nav>
            </header>
          </div>
@@ -78,6 +80,19 @@
   
     <article class="post">
 
+      <h1><a href="/js-iframe-auto/">js调整父层iframe的宽高</a></h1>
+
+      <div class="entry">
+        <p>js控制上层iframe的属性，修改宽高为例。</p>
+
+
+      </div>
+
+      <a href="/js-iframe-auto/" class="button button-primary">Read More</a>
+    </article>
+  
+    <article class="post">
+
       <h1><a href="/redis/">redis</a></h1>
 
       <div class="entry">
@@ -88,6 +103,33 @@
       </div>
 
       <a href="/redis/" class="button button-primary">Read More</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/centos-forgetPWD/">Linux下centos忘记密码，提示‘鉴定错误’</a></h1>
+
+      <div class="entry">
+        <ol>
+  <li>重启，在读秒的界面按键盘的上下选择键；</li>
+  <li>在此界面上按“e”键，出现界面；</li>
+  <li>选择界面中类似kernel开头的第二项；</li>
+  <li>在此按“e”键，出现界面：</li>
+  <li>键盘输入：kernel/boot/vmlinuz-2.4.18-14 single ro root=LABEL=/
+    <ul>
+      <li>vmlinuz的版本以3中的显示为准；</li>
+      <li>按回车键，返回界面；</li>
+    </ul>
+  </li>
+  <li>到此你就可以按“b”键了；</li>
+  <li>在新出现的界面输入：passwd root</li>
+  <li>重置密码；</li>
+  <li>再输入（重启，并以root身份登录）：#reboot</li>
+</ol>
+
+      </div>
+
+      <a href="/centos-forgetPWD/" class="button button-primary">Read More</a>
     </article>
   
     <article class="post">

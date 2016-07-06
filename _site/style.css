@@ -65,7 +65,7 @@ html {
 
 body {
   background: #fff;
-  font: 15px/1.4 微软雅黑;
+  font: 14px/1.4 Helvetica, Arial, sans-serif;
   color: #333;
 }
 
@@ -335,7 +335,7 @@ footer {
 }
 
 code {
-  font: 12px Comic Sans MS;
+  font-family: 'Bitstream Vera Sans Mono','Courier', monospace;
 }
 
 .highlight .c {
