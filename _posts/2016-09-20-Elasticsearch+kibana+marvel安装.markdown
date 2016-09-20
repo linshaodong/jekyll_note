@@ -23,6 +23,7 @@ cd  elasticsearch-$VERSION
 ```
 
 **下载解压指定系统的kibana包，解压即可。(<a href="https://www.elastic.co/downloads/kibana">直接下载包地址</a>)**
+
 >注意：一定要先启动ES（启动方法为bin目录下的elasticsearch）,否则kibana启动不了（kibana启动方法：bin目录下的kibana）
 
 进入kibana目录下执行以下代码
