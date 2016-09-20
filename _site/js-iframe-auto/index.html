@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>js调整父层iframe的宽高 – 猿愤 – 一本书，一张床</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="js控制上层iframe的属性，修改宽高为例。
+
+" />
+    <meta property="og:description" content="js控制上层iframe的属性，修改宽高为例。
+
+" />
+    
+    <meta name="author" content="猿愤" />
+
+    
+    <meta property="og:title" content="js调整父层iframe的宽高" />
+    <meta property="twitter:title" content="js调整父层iframe的宽高" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="alternate" type="application/rss+xml" title="猿愤 - 一本书，一张床" href="/feed.xml" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body>
+    
+    
+    <div class="intro-header">    
+      <div class="container">
+        <div class="post-heading">
+            <h1>js调整父层iframe的宽高</h1>
+            <span class="meta">Posted by <a href="/about"> 
+            </a> on July  6, 2016
+            <a href="/"> 返回首页 </a>
+            </span>
+        </div>
+            
+      </div>
+    </div>
+    
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+ <div class="space-extra-small">
+ </div>
+
+  <div class="entry">
+    <p>js控制上层iframe的属性，修改宽高为例。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    ///父层iframe
+    &lt;div id="game"&gt;&lt;iframe width="300" height="600"&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+    ///子层的js代码：获取父层宽高、修改父层宽高
+    function parentIframe(type, width) {
+        try {
+            var gameId = window.parent.document.getElementById("game");
+            var pIframe = gameId.getElementsByTagName('iframe')[0];
+
+            if (type == 1) { ///set : 设置的宽度
+            
+                pIframe.width = width;
+                pIframe.style.width = width + "px";
+                
+            } else { ///get ：获取宽度
+                var w = parseInt(pIframe.style.width); ///先读去是否设置了style属性
+                if (pIframe.style.width == "" || w &lt; 0) {
+                    w = pIframe.width; ///如果未设置style则取iframe的width属性
+                }
+
+                ///
+                return w;
+            }
+        }
+        catch (e) {
+            //console.log(e);
+            return 0;
+        }
+    }
+    var pWidth = parentIframe();
+    var timer = setInterval(function() {
+        parentIframe();
+    }, 50);
+</code></pre>
+</div>
+
+  </div>
+
+  
+</article>
+
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+            <div class="svg-icon">
+          
+<a href="mailto:1619316848@qq.com"><i class="icon-envelope icon-2x"></i></a>
+
+
+<a href="https://github.com/linshaodong"><i class="icon-github icon-2x"></i></a>
+
+
+
+
+
+
+
+
+            </div>
+        </footer>
+      </div>
+    </div>
+
+
+    
+
+  </body>
+</html>
