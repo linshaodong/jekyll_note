@@ -43,19 +43,19 @@ a) 关注：
 
 ```
 往user_attention_7和user_fans_7各增加一条数据：
-	user_attention_7：我关注了指定用户
-	user_fans_7：我成为指定用户的粉丝
+   user_attention_7：我关注了指定用户
+   user_fans_7：我成为指定用户的粉丝
 当指定用户也关注了我即互粉关系，新增的和上一步增加数据的type置为2：互粉：
-	user_attention_7：指定用户关注了我
-	user_fans_7：指定用户成为我的粉丝
+   user_attention_7：指定用户关注了我
+   user_fans_7：指定用户成为我的粉丝
 ```
 	
 b) 取消关注：
 
 ```
 删除user_attention_7和user_fans_7指定的数据，并且如果指定的用户关注了我，则取消该用户的互粉状态：
-	user_attention_7：我关注了指定用户
-	user_fans_7：我成为指定用户的粉丝
+   user_attention_7：我关注了指定用户
+   user_fans_7：我成为指定用户的粉丝
 ```
 
 c) 获取关注的相关信息：只需查询user_attention_7
