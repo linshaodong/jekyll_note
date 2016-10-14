@@ -13,6 +13,7 @@ categories: [python, codefights]
 关注表：user_attention_分表下标
 粉丝表：user_fans_分表下标
 注：分表下标 = 用户id % 64
+
 ```
 CREATE TABLE `user_attention_7` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -40,8 +41,8 @@ CREATE TABLE `user_fans_7` (
 
 a) 关注：
 - 往user_attention_7和user_fans_7各增加一条数据：
- - user_attention_7：我关注了指定用户
- - user_fans_7：我成为指定用户的粉丝
+	user_attention_7：我关注了指定用户
+	user_fans_7：我成为指定用户的粉丝
 - 当指定用户也关注了我即互粉关系，新增的和上一步增加数据的type置为2：互粉：
 	user_attention_7：指定用户关注了我
 	user_fans_7：指定用户成为我的粉丝
