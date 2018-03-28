@@ -9,12 +9,13 @@ centosm6.5安装tsung和压力测试
 
 **_1、在安装之前确保安装了以下工具_**
 
-
-    yum install gcc -y
-    yum install perl -y
-    yum install unixODBC
-    yum install unixODBC-devel
-    yum install -y ncurses-devel
+```bash
+yum install gcc -y
+yum install perl -y
+yum install unixODBC
+yum install unixODBC-devel
+yum install -y ncurses-devel
+```
 
 **_2、下载并安装erlang_**
 
