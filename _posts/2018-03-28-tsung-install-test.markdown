@@ -77,6 +77,8 @@ export PATH=$PATH:/usr/local/erlang/bin:/usr/local/tsung/bin
 创建日志生产目录
 # mkdir /home/test/log
 # tsung -f /home/test/tsung.xml -l /home/test/log/ start
+进入执行生产的日志目录下
+# cd /home/test/log/执行日期时间/
 生产html格式的报告
 # /usr/local/tsung/lib/tsung/bin/tsung-stats.pl --stats /home/test/log/执行日期时间/tsung.log
 ```
