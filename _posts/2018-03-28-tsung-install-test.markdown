@@ -9,13 +9,12 @@ centosm6.5安装tsung和压力测试
 
 **_1、在安装之前确保安装了以下工具_**
 
-```bash
-yum install gcc -y
-yum install perl -y
-yum install unixODBC
-yum install unixODBC-devel
-yum install -y ncurses-devel
-```
+
+    yum install gcc -y
+    yum install perl -y
+    yum install unixODBC
+    yum install unixODBC-devel
+    yum install -y ncurses-devel
 
 **_2、下载并安装erlang_**
 
@@ -71,7 +70,7 @@ export PATH=$PATH:/usr/local/erlang/bin:/usr/local/tsung/bin
 
 **_7、测试基本http请求_**
 
-```bash
+```
 复制基本的http压测配置到自定义的目录下
 # cp /usr/local/tsung/share/tsung/example/http_example.xml /home/test/tsung.xml
 创建日志生产目录
