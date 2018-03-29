@@ -20,9 +20,9 @@ yum install -y ncurses-devel
 **_2、下载并安装erlang_**
 
 ```bash
-# wget http://www.erlang.org/download/otp_src_R14B04.tar.gz
-# tar -zxvf otp_src_R14B04.tar.gz
-# cd otp_src_R14B04
+# wget http://www.erlang.org/download/otp_src_20.2.tar.gz
+# tar -zxvf otp_src_20.2.tar.gz
+# cd otp_src_20.2
 # ./configure --prefix=/usr/local/erlang
 # make
 # make install
@@ -31,9 +31,9 @@ yum install -y ncurses-devel
 **_3、下载并安装Tsung_**
 
 ```bash
-# wget http://tsung.erlang-projects.org/dist/tsung-1.4.2.tar.gz
-# tar -zxvf tsung-1.4.2.tar.gz
-# cd tsung-1.4.2
+# wget http://tsung.erlang-projects.org/dist/tsung-1.7.0.tar.gz
+# tar -zxvf tsung-1.7.0.tar.gz
+# cd tsung-1.7.0
 # ./configure --prefix=/usr/local/tsung --with-erlang=/usr/local/erlang
 # make
 # make install
